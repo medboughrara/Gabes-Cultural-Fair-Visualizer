@@ -1,0 +1,6 @@
+{
+  "name": "Gabes Cultural Fair Visualizer",
+  "description": "Interactive architectural layout visualizer and AI image generator for the outdoor cultural fair in Gabes, Tunisia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
