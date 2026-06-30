@@ -408,9 +408,9 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-6" id="app-workspace">
         
         {/* Row 1: Interactive Arena Plan + Quick Actions */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
           {/* Main Map Visualizer Grid (Takes 2/3 width) */}
-          <div className="lg:col-span-2 flex flex-col gap-5">
+          <div className="lg:col-span-2 sticky top-6 z-10">
             <SeatingGrid
               layoutParams={layoutParams}
               benches={benches}
@@ -423,12 +423,6 @@ export default function App() {
               showAisles={showAisles}
               showSightlines={showSightlines}
               onReserveQuick={(id) => handleReserve(id, 'Quick Guest', 'Quick-logged seat')}
-            />
-            
-            {/* Elevation Cross-Section Diagram */}
-            <ElevationProfile
-              layoutParams={layoutParams}
-              benches={benches}
             />
           </div>
 
@@ -459,7 +453,13 @@ export default function App() {
           </div>
         </div>
 
-        {/* Row 2: AI Perspective Workspace (Gemini generator & editor) */}
+        {/* Row 2: Elevation Cross-Section Diagram */}
+        <ElevationProfile
+          layoutParams={layoutParams}
+          benches={benches}
+        />
+
+        {/* Row 3: AI Perspective Workspace (Gemini generator & editor) */}
         <AIRendererTab
           gallery={gallery}
           onGenerateImage={handleGenerateImage}
